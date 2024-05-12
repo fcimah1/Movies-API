@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "5fdb6a20-a741-41b3-a29a-4408941e861c",
+		"name": "Movies-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31994745"
+	},
+	"item": [
+		{
+			"name": "movie",
+			"item": [
+				{
+					"name": "get all movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/movies",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get movie by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/movies/get/5",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"movies",
+								"get",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get movie by genre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/movies/get-by-genre/6",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"movies",
+								"get-by-genre",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add movie",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "jack shan",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "bla bla bla",
+									"type": "text"
+								},
+								{
+									"key": "production_date",
+									"value": "1990-01-01",
+									"type": "text"
+								},
+								{
+									"key": "director",
+									"value": "mohamed",
+									"type": "text"
+								},
+								{
+									"key": "duration",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "ssssssss",
+									"type": "text"
+								},
+								{
+									"key": "rate",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "genre_id",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/movies/create",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"movies",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update movie by id",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"jack shan\",\r\n    \"description\":\"bbbbbbbbbbbbbbbbbb\",\r\n    \"production_date\":\"1990-01-01\",\r\n    \"director\":\"mohamed\",\r\n    \"duration\":\"100\",\r\n    \"image\":\"hhhhhhhhhhhhhhhhhhh\",\r\n    \"rate\":3,\r\n    \"genre_id\":8\r\n}"
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/movies/update/6",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"movies",
+								"update",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete movie",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/movies/delete/2",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"movies",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://127.0.0.1:8000/api",
+			"type": "string"
+		}
+	]
+}

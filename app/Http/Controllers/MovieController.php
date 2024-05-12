@@ -77,7 +77,7 @@ class MovieController extends Controller
             'message' => "Movie updated successfully"
         ]);
     }
-    // public function getMoviesByGenre($id){
-    //     return response()->json(Movie::where('genre_id', $id)->get());
-    // }
+    public function getMoviesByGenre($id){
+        return response()->json(Movie::all()->where('genre_id',$id));
+    }
 }

@@ -24,3 +24,4 @@ Route::get('movies/get/{id}', [MovieController::class, "getMovie"]);
 Route::post('movies/create', [MovieController::class, "addMovie"]);
 Route::put('movies/update/{id}', [MovieController::class, "update"]);
 Route::delete('movies/delete/{id}', [MovieController::class, "delete"]);
+Route::get('movies/get-by-genre/{genre_id}', [MovieController::class, "getMoviesByGenre"]);
