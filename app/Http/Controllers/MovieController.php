@@ -16,8 +16,6 @@ class MovieController extends Controller
     }
     public function addMovie(Request $request)
     {
-        dd($request);
-
         $data = $request->validate([
             'name'=> 'required',
             'description'=> 'required',
@@ -28,20 +26,20 @@ class MovieController extends Controller
             'image'=> 'required',
             'genre_id'=> 'required'
         ]);
-        dd($data);
-        // Movie::create([
-        //     'name'=> $data['name'],
-        //     'description'=> $data['description'],
-        //     'production_date'=> $data['production_date'],
-        //     'director'=> $data['director'],
-        //     'duartion'=> $data['duartion'],
-        //     'image'=> $data['image'],
-        //     'rate'=> $data['rate'],
-        //     'genre_id'=> $data['genre_id']
-        // ]);
-        // return response()->json([
-        //     'message' => "Movie created successfully",
-        // ]);
+        // dd($data);
+        Movie::create([
+            'name'=> $data['name'],
+            'description'=> $data['description'],
+            'production_date'=> $data['production_date'],
+            'director'=> $data['director'],
+            'duration'=> $data['duration'],
+            'image'=> $data['image'],
+            'rate'=> $data['rate'],
+            'genre_id'=> $data['genre_id']
+        ]);
+        return response()->json([
+            'message' => "Movie created successfully",
+        ]);
     }
     public function delete($id)
     {
@@ -51,23 +49,34 @@ class MovieController extends Controller
             'message'=> "Movie deleted successfully"
     ]);
     }
-    // public function update(Request $request, $id)
-    // {
+    public function update(Request $request, $id)
+    {
         
-    //     $movie = Movie::findOrFail($id);
-    //     $movie->name = $request->name;
-    //     $movie->description = $request->description;
-    //     $movie->production_date = $request->production_date;
-    //     $movie->director = $request->director;
-    //     $movie->duartion = $request->duartion;
-    //     $movie->image = $request->image;
-    //     $movie->rate = $request->rate;
-    //     $movie->genre_id = $request->genre_id;
-    //     $movie->save();
-    //     return response()->json([
-    //         'message'=> "Movie updated successfully"
-    // ]);
-    // }
+        $movie = Movie::findOrFail($id);
+        $data = $request->validate([
+            'name'=> 'required',
+            'description'=> 'required',
+            'director'=> 'required',
+            'duration'=> 'required',
+            'production_date'=> 'required',
+            'rate'=> 'required',
+            'image'=> 'required',
+            'genre_id'=> 'required'
+        ]);
+        $movie->name = $data['name'];
+        $movie->description = $data['description'];
+        $movie->production_date = $data['production_date'];
+        $movie->director = $data['director'];
+        $movie->duration = $data['duration'];
+        $movie->image = $data['image'];
+        $movie->rate = $data['rate'];
+        $movie->genre_id = $data['genre_id'];
+        echo 'ggggggggggggg';
+        $movie->save();
+        return response()->json([
+            'message' => "Movie updated successfully"
+        ]);
+    }
     // public function getMoviesByGenre($id){
     //     return response()->json(Movie::where('genre_id', $id)->get());
     // }
