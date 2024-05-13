@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class MovieController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
     public function all(){
         return response()->json(Movie::all());
     }
@@ -26,7 +29,6 @@ class MovieController extends Controller
             'image'=> 'required',
             'genre_id'=> 'required'
         ]);
-        // dd($data);
         Movie::create([
             'name'=> $data['name'],
             'description'=> $data['description'],
@@ -39,7 +41,7 @@ class MovieController extends Controller
         ]);
         return response()->json([
             'message' => "Movie created successfully",
-        ]);
+        ],201);
     }
     public function delete($id)
     {
@@ -71,7 +73,6 @@ class MovieController extends Controller
         $movie->image = $data['image'];
         $movie->rate = $data['rate'];
         $movie->genre_id = $data['genre_id'];
-        echo 'ggggggggggggg';
         $movie->save();
         return response()->json([
             'message' => "Movie updated successfully"
