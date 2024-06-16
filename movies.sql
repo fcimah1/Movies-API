@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2024 at 08:19 AM
+-- Generation Time: May 13, 2024 at 07:22 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -202,13 +202,12 @@ CREATE TABLE `movie` (
 --
 
 INSERT INTO `movie` (`id`, `name`, `description`, `director`, `duration`, `production_date`, `rate`, `image`, `genre_id`, `created_at`, `updated_at`) VALUES
-(1, 'Lelia Farrell', 'Repellendus quae distinctio quaerat repellat sit labore et ullam.', 'Vilma Grady', 29.48, '1989-03-14', 4, '0', 51, '2024-05-07 15:52:21', '2024-05-07 15:52:21'),
+(1, 'Lelia Farrell', 'Repellendus quae distinctio quaerat repellat sit labore et ullam.', 'Vilma Grady', 29.48, '1989-03-14', 4, '0', 1, '2024-05-07 15:52:21', '2024-05-07 15:52:21'),
 (3, 'Alden Herzog', 'Sequi tempora dignissimos nulla qui non porro.', 'Eulah Little II', 5.90, '1974-02-25', 5, '0', 53, '2024-05-07 15:52:21', '2024-05-07 15:52:21'),
 (4, 'Prof. Jaydon McClure', 'Qui et aliquid et aut et incidunt aperiam.', 'Amina Schinner', 2.00, '2003-04-23', 1, '0', 56, '2024-05-07 15:52:44', '2024-05-07 15:52:44'),
 (5, 'Meda Mohr IV', 'Ea voluptatem nulla cum quae rerum amet veritatis.', 'Eliza Fritsch DDS', 2.00, '1974-10-11', 2, '0', 57, '2024-05-07 15:52:44', '2024-05-07 15:52:44'),
-(6, 'jack shan', 'bbbbbbbbbbbbbbbbbb', 'mohamed', 100.00, '1990-01-01', 3, 'hhhhhhhhhhhhhhhhhhh', 8, '2024-05-07 15:52:44', '2024-05-12 03:47:19'),
+(6, 'jack huffg', 'hiuyfy', 'mohamed', 100.00, '1990-01-01', 3, 'hhhhhhhhhhhhhhhhhhh', 8, '2024-05-07 15:52:44', '2024-05-12 14:44:21'),
 (7, 'Mr. Kendrick Gleichner', 'Laboriosam esse nostrum magnam accusamus odio in debitis ut dolor voluptatem necessitatibus ab.', 'Mr. Leonardo Cremin IV', 4.00, '1989-12-11', 3, '0', 59, '2024-05-07 15:52:44', '2024-05-07 15:52:44'),
-(8, 'Dr. Tremayne Boyle DVM', 'Ut aut consectetur voluptas et sapiente molestias fugit doloremque maiores placeat modi commodi voluptatem saepe.', 'Maeve Rice', 5.00, '2023-02-13', 4, '0', 60, '2024-05-07 15:52:44', '2024-05-07 15:52:44'),
 (9, 'Bonita Wiza V', 'Eveniet iste aspernatur dolorum et tempore excepturi perspiciatis ipsum voluptas voluptatem.', 'Mr. Deven Ullrich', 4.00, '1993-04-01', 1, 'C:\\Users\\hisham\\AppData\\Local\\Temp\\65ac2f06e626f8e596b0dcf90518f20b.png', 61, '2024-05-07 15:56:47', '2024-05-07 15:56:47'),
 (10, 'Mr. Solon Quigley', 'Recusandae sint cupiditate doloremque eos accusamus rem occaecati.', 'Miss Aliza Murray DDS', 4.00, '1990-04-10', 8, 'C:\\Users\\hisham\\AppData\\Local\\Temp\\083b538f119a8e756d7d1415d045ecca.png', 62, '2024-05-07 15:56:47', '2024-05-07 15:56:47'),
 (11, 'Delores Nitzsche', 'Alias consequuntur suscipit ut quidem consequatur natus est et voluptas.', 'Geoffrey Halvorson MD', 3.00, '2023-11-25', 8, 'C:\\Users\\hisham\\AppData\\Local\\Temp\\a1f1c7eaef68cea9d637ac64387f8c45.png', 63, '2024-05-07 15:56:48', '2024-05-07 15:56:48'),
@@ -219,7 +218,10 @@ INSERT INTO `movie` (`id`, `name`, `description`, `director`, `duration`, `produ
 (16, 'Myrtle Schaefer', 'Magnam aperiam id velit dolorem consequatur quia esse qui porro quaerat.', 'Kenton Rau', 3.00, '1985-05-10', 5, 'C:\\Users\\hisham\\AppData\\Local\\Temp\\8c94d71489edf241d64d1584f1b7e2d6.png', 68, '2024-05-07 15:57:32', '2024-05-07 15:57:32'),
 (17, 'Dr. Alfredo Klein', 'Repellendus explicabo autem ut fuga impedit cum quibusdam laborum quos qui ea.', 'Dr. Eliza McKenzie', 4.00, '2009-09-17', 1, 'C:\\Users\\hisham\\AppData\\Local\\Temp\\0733b8ee14af18d03da377759f5a25d9.png', 69, '2024-05-07 15:57:34', '2024-05-07 15:57:34'),
 (18, 'Twila Towne', 'Quis sit ut qui officia ipsa qui iure vel iste cumque explicabo quasi et.', 'Dr. Jaeden Kozey', 4.00, '2009-07-11', 0, 'C:\\Users\\hisham\\AppData\\Local\\Temp\\af982d6f533982c1250b6089d37e3627.png', 70, '2024-05-07 15:57:35', '2024-05-07 15:57:35'),
-(19, 'jack', 'ddddddddddddddddddddddddddd', 'omar', 222.00, '1999-05-05', 4, 'eeeeeeeeeeeeee', 1, '2024-05-12 03:42:17', '2024-05-12 03:42:17');
+(19, 'jack', 'ddddddddddddddddddddddddddd', 'omar', 222.00, '1999-05-05', 4, 'eeeeeeeeeeeeee', 1, '2024-05-12 03:42:17', '2024-05-12 03:42:17'),
+(20, 'jack shan', 'bla bla bla', 'mohamed', 100.00, '1990-01-01', 2, 'ssssssss', 5, '2024-05-12 14:29:49', '2024-05-12 14:29:49'),
+(21, 'shan', 'hhhhhhhhhhhhh', 'mohamed', 100.00, '1990-01-01', 2, 'jjjjjjjjjjjjjjj', 5, '2024-05-12 14:30:59', '2024-05-12 14:30:59'),
+(22, 'shan', 'hhhhhhhhhhhhh', 'mohamed', 100.00, '1990-01-01', 2, 'jjjjjjjjjjjjjjj', 5, '2024-05-12 14:44:00', '2024-05-12 14:44:00');
 
 -- --------------------------------------------------------
 
@@ -268,6 +270,17 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Terrence Willms MD', 'tillman.kailee@example.com', '2024-05-12 16:29:42', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'CM8I5YpYvL', '2024-05-12 16:29:42', '2024-05-12 16:29:42'),
+(2, 'Mohamed', 'fci.mah@gmail.com', '2024-05-12 16:29:42', '$2y$10$YFH5jJDeEe6.lp6ZLgaaV.UdhemsYd0x1XxGZKrrBaYqUqtPtIUf.', 'rn97VCor8d', '2024-05-12 16:29:42', '2024-05-13 03:07:43'),
+(4, 'Carol DuBuque', 'lynch.rodrick@example.net', '2024-05-12 16:29:42', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'GUuK4OGpx4', '2024-05-12 16:29:42', '2024-05-12 16:29:42'),
+(5, 'Garrett Schinner', 'dickinson.ed@example.com', '2024-05-12 16:29:42', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'OTHlCqEQtI', '2024-05-12 16:29:42', '2024-05-12 16:29:42'),
+(6, 'Mohamed Ahmed', 'eng.mohamedahmed2741991@gmail.com', NULL, '$2y$10$zY4l178teTrzOv6h2lhUa.QLEUkk2U/9W/XlRx1YvNf7FS3HB.hBW', NULL, '2024-05-13 02:56:37', '2024-05-13 02:56:37');
 
 --
 -- Indexes for dumped tables
@@ -359,7 +372,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `movie`
 --
 ALTER TABLE `movie`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -371,7 +384,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables

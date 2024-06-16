@@ -2,10 +2,113 @@
 	"info": {
 		"_postman_id": "5fdb6a20-a741-41b3-a29a-4408941e861c",
 		"name": "Movies-api",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "31994745"
 	},
 	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "tillman.kailee@example.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{BASE_URL}}/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTU1NzQ1NTcsImV4cCI6MTcxNTU3ODE1NywibmJmIjoxNzE1NTc0NTU3LCJqdGkiOiI3NWJYVGR1emFIMlkxdVFXIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5cMcT2QDMyBomNUhkbHoKmV8SZt9xtEM7Kf_4EJ5ph4"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "jack shan",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "bla bla bla",
+									"type": "text"
+								},
+								{
+									"key": "production_date",
+									"value": "1990-01-01",
+									"type": "text"
+								},
+								{
+									"key": "director",
+									"value": "mohamed",
+									"type": "text"
+								},
+								{
+									"key": "duration",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "ssssssss",
+									"type": "text"
+								},
+								{
+									"key": "rate",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "genre_id",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{BASE_URL}}/auth/logout"
+					},
+					"response": []
+				}
+			]
+		},
 		{
 			"name": "movie",
 			"item": [
@@ -13,16 +116,13 @@
 					"name": "get all movies",
 					"request": {
 						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/movies",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"movies"
-							]
-						}
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTU4Mzg0MDUsImV4cCI6MTcxNTg0MjAwNSwibmJmIjoxNzE1ODM4NDA1LCJqdGkiOiJEZjNuakNnZmJHVkZWTW5tIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.OUlm_wsKKLpMnP9JVQqrzL48l4VbFpt6xHYwoHzBFOE"
+							}
+						],
+						"url": "{{BASE_URL}}/movies"
 					},
 					"response": []
 				},
@@ -30,18 +130,13 @@
 					"name": "get movie by id",
 					"request": {
 						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/movies/get/5",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"movies",
-								"get",
-								"5"
-							]
-						}
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTU4Mzg0MDUsImV4cCI6MTcxNTg0MjAwNSwibmJmIjoxNzE1ODM4NDA1LCJqdGkiOiJEZjNuakNnZmJHVkZWTW5tIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.OUlm_wsKKLpMnP9JVQqrzL48l4VbFpt6xHYwoHzBFOE"
+							}
+						],
+						"url": "{{BASE_URL}}/movies/get/9"
 					},
 					"response": []
 				},
@@ -50,17 +145,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/movies/get-by-genre/6",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"movies",
-								"get-by-genre",
-								"6"
-							]
-						}
+						"url": "{{BASE_URL}}/movies/get-by-genre/6"
 					},
 					"response": []
 				},
@@ -122,16 +207,7 @@
 								}
 							]
 						},
-						"url": {
-							"raw": "{{BASE_URL}}/movies/create",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"movies",
-								"create"
-							]
-						}
+						"url": "{{BASE_URL}}/movies/create"
 					},
 					"response": []
 				},
@@ -152,17 +228,7 @@
 							"mode": "raw",
 							"raw": "{\r\n    \"name\":\"jack shan\",\r\n    \"description\":\"bbbbbbbbbbbbbbbbbb\",\r\n    \"production_date\":\"1990-01-01\",\r\n    \"director\":\"mohamed\",\r\n    \"duration\":\"100\",\r\n    \"image\":\"hhhhhhhhhhhhhhhhhhh\",\r\n    \"rate\":3,\r\n    \"genre_id\":8\r\n}"
 						},
-						"url": {
-							"raw": "{{BASE_URL}}/movies/update/6",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"movies",
-								"update",
-								"6"
-							]
-						}
+						"url": "{{BASE_URL}}/movies/update/6"
 					},
 					"response": []
 				},
@@ -171,17 +237,282 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"url": {
-							"raw": "{{BASE_URL}}/movies/delete/2",
-							"host": [
-								"{{BASE_URL}}"
-							],
-							"path": [
-								"movies",
-								"delete",
-								"2"
+						"url": "{{BASE_URL}}/movies/delete/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "get all users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTU1NzQ1NTcsImV4cCI6MTcxNTU3ODE1NywibmJmIjoxNzE1NTc0NTU3LCJqdGkiOiI3NWJYVGR1emFIMlkxdVFXIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5cMcT2QDMyBomNUhkbHoKmV8SZt9xtEM7Kf_4EJ5ph4Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTU1Mzg3NjIsImV4cCI6MTcxNTU0MjM2MiwibmJmIjoxNzE1NTM4NzYyLCJqdGkiOiJzdEVsU3FGNWdRaXE1a2kyIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.Zk5A-tOGv2y_bbGhYkY6qJ_tCepHZ0OTQG0pa1IImZw"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "jack shan",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "bla bla bla",
+									"type": "text"
+								},
+								{
+									"key": "production_date",
+									"value": "1990-01-01",
+									"type": "text"
+								},
+								{
+									"key": "director",
+									"value": "mohamed",
+									"type": "text"
+								},
+								{
+									"key": "duration",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "ssssssss",
+									"type": "text"
+								},
+								{
+									"key": "rate",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "genre_id",
+									"value": "5",
+									"type": "text"
+								}
 							]
-						}
+						},
+						"url": "{{BASE_URL}}/users"
+					},
+					"response": []
+				},
+				{
+					"name": "get user by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true,
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTg1NzA2MzIsImV4cCI6MTcxODU3NDIzMiwibmJmIjoxNzE4NTcwNjMyLCJqdGkiOiIzWlBiRlJUb1JTQmgwNXhKIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.GgC4lzLoU6fae0y-LqYbwWVCfMU9238E11U4QOBcuQg"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "jack shan",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "bla bla bla",
+									"type": "text"
+								},
+								{
+									"key": "production_date",
+									"value": "1990-01-01",
+									"type": "text"
+								},
+								{
+									"key": "director",
+									"value": "mohamed",
+									"type": "text"
+								},
+								{
+									"key": "duration",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "ssssssss",
+									"type": "text"
+								},
+								{
+									"key": "rate",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "genre_id",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{BASE_URL}}/users/get/2"
+					},
+					"response": []
+				},
+				{
+					"name": "delete user by id",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer  eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTg1NzA2MzIsImV4cCI6MTcxODU3NDIzMiwibmJmIjoxNzE4NTcwNjMyLCJqdGkiOiIzWlBiRlJUb1JTQmgwNXhKIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.GgC4lzLoU6fae0y-LqYbwWVCfMU9238E11U4QOBcuQg"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "jack shan",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "bla bla bla",
+									"type": "text"
+								},
+								{
+									"key": "production_date",
+									"value": "1990-01-01",
+									"type": "text"
+								},
+								{
+									"key": "director",
+									"value": "mohamed",
+									"type": "text"
+								},
+								{
+									"key": "duration",
+									"value": "100",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "ssssssss",
+									"type": "text"
+								},
+								{
+									"key": "rate",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "genre_id",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{BASE_URL}}/users/delete/3"
+					},
+					"response": []
+				},
+				{
+					"name": "add new user",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTU4Mzg0MDUsImV4cCI6MTcxNTg0MjAwNSwibmJmIjoxNzE1ODM4NDA1LCJqdGkiOiJEZjNuakNnZmJHVkZWTW5tIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.OUlm_wsKKLpMnP9JVQqrzL48l4VbFpt6xHYwoHzBFOE"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Mohamed Ahmed",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "eng.mohamedahmed2741991@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{BASE_URL}}/users/create"
+					},
+					"response": []
+				},
+				{
+					"name": "udate user",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3MTU1NzQ1NTcsImV4cCI6MTcxNTU3ODE1NywibmJmIjoxNzE1NTc0NTU3LCJqdGkiOiI3NWJYVGR1emFIMlkxdVFXIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5cMcT2QDMyBomNUhkbHoKmV8SZt9xtEM7Kf_4EJ5ph4"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Mohamed\",\r\n    \"email\":\"fci.mah@gmail.com\",\r\n    \"password\":\"12345\"\r\n}"
+						},
+						"url": "{{BASE_URL}}/users/update/2"
 					},
 					"response": []
 				}

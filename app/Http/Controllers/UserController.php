@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -39,17 +40,13 @@ class UserController extends Controller
         return response()->json(['message' => 'User updated successfully'], 200);
     }
 
-    public function addUser(Request $request)
+    public function addUser(UserRequest $userRequest)
     {
-        $data = $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|email',
-            'password' => 'required|string'
-        ]);
+        
         User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password'])
+            'name' => $userRequest['name'],
+            'email' => $userRequest['email'],
+            'password' => bcrypt($userRequest['password'])
         ]);
         return response()->json(['message' => 'User created successfully'], 201);
     }
